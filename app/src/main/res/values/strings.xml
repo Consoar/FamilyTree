@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FamilyTree</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="about">家谱APP测试版</string>
+    <string name="version">Version:0.2.0_150407</string>
+</resources>

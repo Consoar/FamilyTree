@@ -1,0 +1,318 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?attr/actionBarSize"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/person_detail_header"
+                android:paddingBottom="8dp"
+                android:layout_width="fill_parent"
+                android:layout_height="120dp" >
+
+                <View
+                    android:id="@+id/person_header_background_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#ff333331" />
+
+                <bos.whu.familytree.support.views.CircularImageView
+                    android:id="@+id/headImageView"
+                    android:paddingLeft="2dp"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_margin="8dp"
+                    app:border="true"
+                    app:border_width="2dp"
+                    app:border_color="@android:color/white"
+                    app:shadow="true"
+                    android:src="@drawable/test" />
+
+                <LinearLayout
+                    android:id="@+id/tree_link_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:padding="4dp"
+                    android:layout_alignLeft="@+id/person_detail_text_container"
+                    android:layout_below="@id/person_detail_text_container"
+                    android:background="@drawable/view_tree_btn_bg"
+                    android:clickable="true"
+                    android:orientation="horizontal"
+                     >
+
+                    <ImageView
+                        android:id="@+id/person_tree_link_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tree_link" />
+
+                    <TextView
+                        android:id="@+id/person_tree_link_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5.0dip"
+                        android:text="家庭树"
+                        android:textColor="@android:color/white"
+                        android:textSize="18.0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/father_link_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:padding="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/tree_link_btn"
+                    android:layout_below="@id/person_detail_text_container"
+                    android:background="@drawable/view_tree_btn_bg"
+                    android:clickable="true"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:id="@+id/father_tree_link_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/father_link" />
+
+                    <TextView
+                        android:id="@+id/father_tree_link_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5.0dip"
+                        android:text="找祖先"
+                        android:textColor="@android:color/white"
+                        android:textSize="18.0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/person_detail_text_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/headImageView"
+                    android:layout_toRightOf="@+id/headImageView"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/person_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0.0dip"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:padding="0.0dip"
+                        android:text="张三"
+                        android:textColor="@android:color/white"
+                        android:textSize="26.0dip"
+                        />
+
+                    <TextView
+                        android:id="@+id/person_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0.0dip"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:padding="0.0dip"
+                        android:text="1970 - ?"
+                        android:textColor="#ffb3b3b3"
+                        android:textSize="16.0dip"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/body"
+                android:layout_below="@id/person_detail_header"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:padding="8dp"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:text="性别："
+                        />
+                    <TextView
+                        android:id="@+id/sex"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="男"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:padding="8dp"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:text="出生地："
+                        />
+                    <TextView
+                        android:id="@+id/bornplace"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="南京"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:padding="8dp"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:text="出生描述："
+                        />
+                    <TextView
+                        android:id="@+id/borndsc"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="暂无"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:padding="8dp"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:text="去世地："
+                        />
+                    <TextView
+                        android:id="@+id/deathplace"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="暂无"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:padding="8dp"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:text="安葬地："
+                        />
+                    <TextView
+                        android:id="@+id/graveyard"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="暂无"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:padding="8dp"
+                    android:background="@android:color/white"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:text="去世描述："
+                        />
+                    <TextView
+                        android:id="@+id/deathdsc"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="暂无"
+                        />
+                </LinearLayout>
+                <TextView
+                    android:textSize="14sp"
+                    android:padding="8dp"
+                    android:textColor="@android:color/black"
+                    android:background="@android:color/white"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="人物详情："
+                    />
+                <TextView
+                    android:id="@+id/pdetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:text="北京城里的员外大户，绰号“玉麒麟 ”，一身好武艺，棍棒天下无双。被梁山泊吴用用计骗到梁山，卢俊义与梁山英雄大战，不敌而逃，乘船逃走时被浪里白条张顺活捉。卢俊义不愿在梁山落草为寇，乘机逃走。回到北京城，妻子贾氏却与管家李固做了夫妻。卢俊义同时亦被官兵捉拿，屈打成招，下了死牢。宋江率梁山泊英雄攻打北京城，拼命三郎石秀独力劫法场，救出卢俊义，杀了奸夫淫妇。卢俊义投奔梁山后，坐上了第二把交椅。受招安后卢俊义被封为武功大夫、庐州安抚使兼兵马副总管。后被高俅用药酒毒伤，不能骑马，乘船时失足落水而死。梁山泊第十三位好汉，十员步军头领第一名。鲁智深原名鲁达，是经略的提辖，因为见郑屠欺侮金翠莲父女，三拳打死了镇关西。被官府追捕，逃到五台山削发为僧，改名鲁智深。鲁智深忍受不住佛门清规，醉打山门，毁坏金身，被长老派往东京相国寺，看守菜园，因将偷菜的泼皮踢进了粪池，倒拔垂杨柳，威名远扬。鲁智深在野猪林救了林冲，高俅派人捉拿鲁智深，鲁智深在二龙山落草。后投奔水泊梁山，做了步兵头领。宋江攻打方腊，鲁智深一杖打翻了方腊。后在杭州六合寺圆寂而死。北京城里的员外大户，绰号“玉麒麟 ”，一身好武艺，棍棒天下无双。被梁山泊吴用用计骗到梁山，卢俊义与梁山英雄大战，不敌而逃，乘船逃走时被浪里白条张顺活捉。卢俊义不愿在梁山落草为寇，乘机逃走。回到北京城，妻子贾氏却与管家李固做了夫妻。卢俊义同时亦被官兵捉拿，屈打成招，下了死牢。宋江率梁山泊英雄攻打北京城，拼命三郎石秀独力劫法场，救出卢俊义，杀了奸夫淫妇。卢俊义投奔梁山后，坐上了第二把交椅。受招安后卢俊义被封为武功大夫、庐州安抚使兼兵马副总管。后被高俅用药酒毒伤，不能骑马，乘船时失足落水而死。梁山泊第十三位好汉，十员步军头领第一名。鲁智深原名鲁达，是经略的提辖，因为见郑屠欺侮金翠莲父女，三拳打死了镇关西。被官府追捕，逃到五台山削发为僧，改名鲁智深。鲁智深忍受不住佛门清规，醉打山门，毁坏金身，被长老派往东京相国寺，看守菜园，因将偷菜的泼皮踢进了粪池，倒拔垂杨柳，威名远扬。鲁智深在野猪林救了林冲，高俅派人捉拿鲁智深，鲁智深在二龙山落草。后投奔水泊梁山，做了步兵头领。宋江攻打方腊，鲁智深一杖打翻了方腊。后在杭州六合寺圆寂而死。" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+    <View xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/gradient_header_background"
+        android:minHeight="?attr/actionBarSize" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_dialer_primary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar" />
+</FrameLayout>

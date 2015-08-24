@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Fragment Names -->
+    <string name="fragment_names_fragment1">Fragment 1</string>
+
+    <!-- Drawer Menu -->
+    <string name="fragment_drawerMenu_text_fragment1">主页</string>
+    <string name="fragment_drawerMenu_text_fragment2">关于</string>
+
+    <string-array name="fragment_drawerMenu_title">
+        <item>@string/fragment_drawerMenu_text_fragment1</item>
+        <item>@string/fragment_drawerMenu_text_fragment2</item>
+    </string-array>
+
+</resources>

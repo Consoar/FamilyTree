@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/theme_dialer_primary"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar" />
+
+        <bos.whu.familytree.support.views.TreeView
+            android:id="@+id/activity_treeeview_treerview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:hardwareAccelerated="true"
+            android:paddingBottom="@dimen/tree_view_margin"
+            android:paddingLeft="@dimen/tree_view_margin"
+            android:paddingRight="@dimen/tree_view_margin"
+            android:paddingTop="@dimen/tree_view_margin"
+            android:background="@drawable/treeview_background"
+            >
+
+        </bos.whu.familytree.support.views.TreeView>
+    </LinearLayout>
+
+</RelativeLayout>

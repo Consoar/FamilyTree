@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 22
+  buildToolsVersion "21.1.2"
+
+  defaultConfig {
+    applicationId "bos.whu.familytree"
+    minSdkVersion 15
+    targetSdkVersion 22
+    versionCode 3
+    versionName "0.2.1"
+  }
+  buildTypes {
+    release {
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      proguardFile 'proguard-rules.txt'
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile 'com.android.support:appcompat-v7:22.0.0'
+  compile 'com.android.support:support-v4:22.0.0'
+  compile 'com.github.ksoichiro:android-observablescrollview:1.4.0'
+  compile 'com.melnykov:floatingactionbutton:1.1.0'
+  compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+  compile 'com.timehop.stickyheadersrecyclerview:library:0.3.6@aar'
+  compile 'com.mcxiaoke.volley:library:1.0.+'
+  compile 'com.squareup.picasso:picasso:2.5.2'
+  compile files('C:/AndroidStudioProjects/FamilyTree/libs/gson-2.2.4.jar')
+}
+
